@@ -13,7 +13,7 @@ export default function LanguageSelect() {
   };
 
   return (
-    <div className="relative inline-block w-64">
+    <div className="relative inline-block w-64 z-50">
       {/* Selected Option */}
       <div
         className="flex items-center justify-between w-8 h-8 p-1 bg-white border border-gray-300 rounded-lg shadow-sm cursor-pointer hover:border-blue-400"
