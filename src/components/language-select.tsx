@@ -2,14 +2,18 @@
 
 import React, { useState } from "react";
 import { SupportedLanguages } from "@/constants/i18n";
+import { changeLanguage } from "@/utils/i18n";
+import { useRouter } from "next/router";
 
 export default function LanguageSelect() {
+  const router = useRouter();
   const [selectedOption, setSelectedOption] = useState(SupportedLanguages[0]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleSelect = (option: (typeof SupportedLanguages)[number]) => {
     setSelectedOption(option);
     setIsDropdownOpen(false);
+    changeLanguage(router, option.value);
   };
 
   return (

@@ -4,8 +4,10 @@ import { useState, useEffect, ReactElement } from "react";
 import LanguageSelect from "@/components/language-select";
 import Select from "@/components/select";
 import { getText } from "@/utils/i18n";
+import { useSearchParams } from "next/navigation";
 
 export default function Home() {
+  const currentLang = useSearchParams()?.get("lang") || undefined;
   const [message, setMessage] = useState("");
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-row justify-between">
-        {getText("welcome_title", "en_US")}
+        {getText("welcome_title", currentLang)}
         <LanguageSelect></LanguageSelect>
       </div>
       <Select></Select>
