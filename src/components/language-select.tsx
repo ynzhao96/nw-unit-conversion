@@ -17,18 +17,18 @@ export default function LanguageSelect() {
   };
 
   return (
-    <div className="relative inline-block w-64 z-50">
+    <div className="relative inline-block">
       {/* Selected Option */}
       <div
-        className="flex items-center justify-between w-8 h-8 p-1 bg-white border border-gray-300 rounded-lg shadow-sm cursor-pointer hover:border-blue-400"
+        className="flex items-center justify-between w-8 h-8 p-1 cursor-pointer"
         onClick={() => setIsDropdownOpen((prev) => !prev)}
       >
-        <img src="/globe.svg" className="w-full h-full" />
+        <img src="/i18n.svg" className="w-full h-full" />
       </div>
 
       {/* Dropdown Options */}
       {isDropdownOpen && (
-        <ul className="absolute left-0 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-md">
+        <ul className="absolute left-0 w-64 z-50 mt-1 bg-white border border-gray-300 rounded-lg shadow-md">
           {SupportedLanguages.map((option) => (
             <li
               key={option.value}

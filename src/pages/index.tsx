@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, ReactElement } from "react";
-import LanguageSelect from "@/components/language-select";
 import Select from "@/components/select";
 import { getText } from "@/utils/i18n";
 import { useSearchParams } from "next/navigation";
@@ -30,10 +29,9 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-row justify-between">
+      <h1 className="flex flex-row justify-between w-full">
         {getText("welcome_title", currentLang)}
-        <LanguageSelect></LanguageSelect>
-      </div>
+      </h1>
       <Select></Select>
     </>
   );
